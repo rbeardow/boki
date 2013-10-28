@@ -1,0 +1,4 @@
+env/
+Web/src/app.db
+Web/src/config.py
+config.py
