@@ -1,0 +1,47 @@
+{% extends "master.html" %}
+
+{% block sidebar %}
+    <div class="list-group">
+
+        <a href="/" class="list-group-item">
+            <span class="glyphicon glyphicon-chevron-left"></span> Home
+        </a>
+        {% if page.siblings %}
+            {% for sibling in page.siblings %}
+                <a href="/page/{{sibling.id}}" class="list-group-item {% if sibling == page %} active {% endif %}">
+                    {{sibling.title}}
+                </a>
+                {% if sibling == page and page.children %}
+
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            {% for child in page.children %}
+                <a href="/page/{{child.id}}" class="list-group-item">
+                    {{child.title}}
+                </a>            
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block header %}
+	<div class="pull-right">
+		<a href="/edit" type="button" class="btn btn-default">Edit Page</a>
+	 	<button type="button" class="btn btn-default">Create Child Page</button>
+	 	<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span></button>
+	</div>
+	<h1>{{page.title}}</h1>
+{% endblock %}
+
+{% block content %}
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed sem dui. Vivamus sed arcu commodo, auctor risus eu, semper purus. Nunc porta vel ante sit amet feugiat. In elit metus, iaculis non tellus ut, gravida ultricies urna. Sed sagittis tortor vel arcu molestie varius. Vestibulum malesuada vel tellus et dignissim. Sed suscipit laoreet mauris nec iaculis. Maecenas eget tincidunt eros, in lobortis justo. Pellentesque posuere neque eget tortor porttitor interdum. Vivamus sit amet congue augue. Fusce sed porta mauris. Fusce id mattis ligula. Nulla nec elit pretium, viverra neque et, sagittis est.</p>
+
+	<p>Ut feugiat enim sed tortor sagittis, ac tristique purus vulputate. Vivamus lorem libero, tincidunt non molestie et, iaculis nec purus. Aenean mollis lobortis viverra. Vivamus tempor mi mi, non volutpat dui imperdiet at. Cras ac facilisis risus. Praesent placerat felis enim, ultrices mattis lorem pellentesque et. Cras faucibus erat felis. Curabitur eu pulvinar risus, at ultrices sem. Suspendisse quis elit ut velit iaculis elementum at ut enim. Pellentesque sodales suscipit mauris, eu elementum sapien interdum ac. Proin ac fermentum felis. Cras malesuada volutpat ante, et adipiscing arcu scelerisque non. Phasellus molestie consequat pretium. Integer mauris justo, tincidunt quis sapien sit amet, consequat gravida metus. Etiam dignissim nisi ut erat rutrum faucibus.</p>
+
+	<p>Mauris ultricies dui justo, non pellentesque turpis posuere sed. Donec consectetur volutpat nunc mollis interdum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer porttitor vel ante id facilisis. Vivamus elementum viverra feugiat. Nunc rhoncus eros in ultricies sollicitudin. Vestibulum sed fringilla purus. Nullam bibendum libero velit, ac sollicitudin magna dapibus nec. Etiam dictum neque vel nisi pulvinar adipiscing. Fusce orci lorem, viverra quis odio ac, volutpat vestibulum velit. In nec pretium elit, vitae rutrum mi. Mauris id lorem tempus nulla semper consequat. Aliquam erat volutpat. Vivamus dignissim lectus nec ipsum posuere rutrum.</p>
+
+	<p>Proin vestibulum varius tincidunt. Vivamus placerat, ipsum vel fermentum tempor, justo eros elementum tellus, vel egestas nunc odio sit amet nisl. Phasellus vitae augue mauris. Sed lacinia nulla eget dui porta, vitae vestibulum risus imperdiet. Suspendisse nec ligula ante. Aliquam ligula est, iaculis et purus at, mattis porta purus. Cras adipiscing, purus eget luctus varius, est enim bibendum sem, mattis placerat justo nisl facilisis magna. Fusce et porttitor mi, in feugiat nibh. Aliquam porttitor lectus vitae elit mattis, eget dapibus lacus pulvinar. Sed blandit sollicitudin lectus, sed fermentum justo iaculis sit amet. In hac habitasse platea dictumst. Integer est dui, eleifend vel sollicitudin at, aliquet et sem. Donec eu molestie dui.</p>
+
+	<p>Vivamus fringilla turpis sed sem convallis faucibus sit amet in augue. Praesent tristique ligula lectus, nec mattis lectus imperdiet ac. Vestibulum quis sapien sed nisi semper viverra id id quam. Nullam viverra orci enim, sed feugiat purus posuere ut. Aenean pellentesque nulla ac lacus viverra, nec facilisis eros pellentesque. Suspendisse fermentum mi non augue dignissim lacinia. In sit amet tellus volutpat, mollis lorem vitae, porttitor metus. Suspendisse tortor nibh, auctor a tristique id, sollicitudin vitae nisl. Nunc id ante nec diam commodo interdum eget sed nisl. Nullam feugiat hendrerit augue. Nullam massa mi, tincidunt eget consectetur vehicula, vehicula ac justo. Cras ultricies porta erat pellentesque euismod. Sed ut sapien eleifend ipsum iaculis accumsan. Pellentesque luctus enim urna, a varius turpis egestas et. Cras egestas non felis vitae tincidunt.</p>
+{% endblock %}

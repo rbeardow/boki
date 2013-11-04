@@ -1,0 +1,43 @@
+{% extends "master.html" %}
+
+{% block sidebar %}
+    <div class="list-group">
+        <a href="#" class="list-group-item">
+            <span class="glyphicon glyphicon-chevron-left"></span> Home
+        </a>
+        <a href="#" class="list-group-item">
+            Test Page 1
+        </a>
+        <a href="#" class="list-group-item">
+            Test Page 1
+        </a>
+        <a href="#" class="list-group-item">
+            Test Page 1
+        </a>
+    </div>
+{% endblock %}
+
+{% block header %}
+    <div class="row">
+
+        <div class="col-md-8">
+            <input type="text" value="{{page.title}}" class="form-control"/>
+        </div>
+
+    	<div class="col-md-4">
+            <button type="button" class="btn btn-default">Preview Page</button>
+    		<button type="button" class="btn btn-default">Save Page</button>
+            <a href="/" class="btn btn-default">Discard</a>
+    	</div>
+
+    </div>
+    
+{% endblock %}
+
+{% block content %}
+
+    <textarea class="form-control">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed sem dui. Vivamus sed arcu commodo, auctor risus eu, semper purus. Nunc porta vel ante sit amet feugiat. In elit metus, iaculis non tellus ut, gravida ultricies urna. Sed sagittis tortor vel arcu molestie varius. Vestibulum malesuada vel tellus et dignissim. Sed suscipit laoreet mauris nec iaculis. Maecenas eget tincidunt eros, in lobortis justo. Pellentesque posuere neque eget tortor porttitor interdum. Vivamus sit amet congue augue. Fusce sed porta mauris. Fusce id mattis ligula. Nulla nec elit pretium, viverra neque et, sagittis est.
+    </textarea>
+
+{% endblock %}
